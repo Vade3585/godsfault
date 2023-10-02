@@ -1,0 +1,5 @@
+# Reader script
+echo "Reader script"
+exec < my_pipe # redirect input from the named pipe
+read data # read data from the named pipe
+echo "data received from the writer script: $data" # dis
