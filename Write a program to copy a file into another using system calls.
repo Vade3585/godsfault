@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Set the default path for the source and destination files
+default_path="E:/cygwin/home/admin/"
+
+# Prompt the user to enter the filename of the source file
+echo "Enter the filename of the source file: "
+read src_file_name
+
+
+# Prompt the user to enter the filename of the destination file
+echo "Enter the filename of the destination file:"
+read dest_file_name
+
+
+# Construct the full paths to the source and destination files using the default path
+src_file_path="$default_path$src_file_name"
+dest_file_path="$default_path$dest_file-name"
+
+# Use the cp command to copy the source file to the destination file
+cp "$src_file_path" "$dest_file_path"
+
+# Check if the cp command was successful
+if [ $? -eq 0 ]; then
+echo "File copied successfully"
+else
+echo "File copy failed"
+fi
