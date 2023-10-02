@@ -1,0 +1,10 @@
+clear
+
+read -p "Enter the filename: " filename
+
+if [ ! -f "$filename" ] || [ ! -r "$filename" ]; then
+echo "Error: $filename is not a readable file"
+exit 1
+fi
+
+grep -ciE '^[^aeiou ]+$' "$filename"
