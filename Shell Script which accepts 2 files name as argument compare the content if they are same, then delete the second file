@@ -1,0 +1,16 @@
+read -p "Enter the first filename: " file1
+if [ ! -f "$file1" ] || [ ! -r "$file1" ]; then
+echo "Error: $file1 is not readable file"
+exit 1
+fi
+read -p "Enter the Second filename:" file2
+if [ ! -f "$file2" ] || [ ! -r "$file2" ]; then
+echo "Error: $file2 is not a readable file"
+exit 1
+fi
+if cmp -s "$file1" "$file2"; then
+rm "$file2"
+echo "the files were the same, and $file2 has been deleted."
+else
+echo "the files were different."
+fi
